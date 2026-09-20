@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Shintaro & Rina 結婚式のご案内</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="竹重慎太郎・鈴木里奈 結婚式のご案内（2026年10月12日 シェラトン・グランデ・トーキョーベイ・ホテル）">
@@ -18,11 +18,11 @@
     --ground: #F6F4EE;
     --paper: #FCFBF8;
     --ink: #1E2B3C;
-    --ink-soft: #4A5566;
-    --mist: #8A94A3;
+    --ink-soft: #3C4656;
+    --mist: #5F6B7A;
     --sand: #D9CDB8;
     --sand-deep: #B7A78A;
-    --gold: #9C8350;
+    --gold: #7D6633;
     --line: #E3DDD0;
     --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
     --serif-en: "Cormorant Garamond", "Times New Roman", serif;
@@ -34,9 +34,9 @@
     background: var(--ground);
     color: var(--ink);
     font-family: var(--sans);
-    font-weight: 300;
-    font-size: 17px;
-    line-height: 1.95;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.9;
     letter-spacing: 0.04em;
     -webkit-font-smoothing: antialiased;
   }
@@ -81,7 +81,7 @@
   }
   .hero .eyebrow {
     font-family: var(--serif-en);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 15px;
     letter-spacing: 0.32em;
     text-transform: uppercase;
@@ -162,11 +162,18 @@
     display: grid;
     gap: 6px;
   }
+  .sec-head::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-top: 10px;
+  }
   .sec-head .en {
     margin: 0;
     font-family: var(--serif-en);
-    font-weight: 300;
-    font-size: 13px;
+    font-weight: 400;
+    font-size: 14px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
@@ -174,14 +181,14 @@
   .sec-head h2 {
     margin: 0;
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 27px;
+    font-weight: 600;
+    font-size: 31px;
     letter-spacing: 0.12em;
     line-height: 1.5;
     text-wrap: balance;
   }
   .prose p { margin: 0; }
-  .prose p + p { margin-top: 1.4em; }
+  .prose p + p { margin-top: 1.5em; }
   .prose .sign {
     margin-top: 2.4em;
     text-align: right;
@@ -200,7 +207,8 @@
   }
   .info dt {
     font-family: var(--serif-jp);
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
     letter-spacing: 0.2em;
     color: var(--gold);
     padding-top: 3px;
@@ -209,14 +217,15 @@
   .info dd .big {
     display: block;
     font-family: var(--serif-jp);
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 24px;
     letter-spacing: 0.1em;
     line-height: 1.6;
   }
   .info dd small {
     display: block;
     color: var(--mist);
-    font-size: 15px;
+    font-size: 16px;
   }
   .info .time-row {
     display: flex;
@@ -224,7 +233,7 @@
     gap: 6px 22px;
     font-variant-numeric: tabular-nums;
   }
-  .info .time-row span b { font-weight: 500; }
+  .info .time-row span b { font-weight: 700; font-size: 1.15em; }
 
   .map { position: relative; width: 100%; max-width: 100%; aspect-ratio: 4 / 3; background: var(--sand); border: 1px solid var(--line); overflow: hidden; }
   .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.7); }
@@ -245,11 +254,11 @@
   .map-card-text { display: grid; gap: 2px; }
   .map-card-text b {
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 18px;
     letter-spacing: 0.12em;
   }
-  .map-card-text span { color: var(--mist); font-size: 15px; line-height: 1.7; }
+  .map-card-text span { color: var(--mist); font-size: 16px; line-height: 1.7; }
   .map-card-arrow { font-family: var(--serif-en); color: var(--sand-deep); font-size: 22px; }
 
   .access {
@@ -265,14 +274,15 @@
   }
   .access .mode {
     font-family: var(--serif-jp);
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
     letter-spacing: 0.14em;
     color: var(--gold);
     padding-top: 3px;
     border-right: 1px solid var(--line);
   }
   .access p { margin: 0; }
-  .access .note { color: var(--mist); font-size: 15px; }
+  .access .note { color: var(--mist); font-size: 16px; }
 
   /* ---------- meeting ---------- */
   .meet {
@@ -292,7 +302,8 @@
   .meet-card p { margin: 0; }
   .meet-label {
     font-family: var(--serif-jp);
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 17px;
     letter-spacing: 0.18em;
     color: var(--gold);
   }
@@ -303,23 +314,23 @@
   }
   .meet-time time {
     font-family: var(--serif-en);
-    font-weight: 400;
-    font-size: 45px;
+    font-weight: 500;
+    font-size: 52px;
     line-height: 1.1;
     letter-spacing: 0.04em;
     font-variant-numeric: tabular-nums;
   }
-  .meet-time span { font-size: 15px; color: var(--ink-soft); }
+  .meet-time span { font-size: 17px; color: var(--ink-soft); }
   .meet-place {
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 20px;
     letter-spacing: 0.08em;
   }
-  .meet-note { color: var(--mist); font-size: 15px; line-height: 1.8; padding-top: 4px; }
+  .meet-note { color: var(--mist); font-size: 16px; line-height: 1.8; padding-top: 4px; }
 
   .access p + p { margin-top: 8px; }
-  .access b { font-weight: 500; }
+  .access b { font-weight: 700; }
 
   /* ---------- photo / bus / dog ---------- */
   .photo { margin: 0; display: grid; gap: 10px; }
@@ -332,7 +343,7 @@
     border: 1px solid var(--line);
   }
   .photo figcaption {
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 0.08em;
     color: var(--mist);
     text-align: right;
@@ -395,7 +406,7 @@
   .bus-table {
     border-collapse: collapse;
     font-variant-numeric: tabular-nums;
-    font-size: 16px;
+    font-size: 17px;
     width: 100%;
     max-width: 300px;
   }
@@ -411,7 +422,7 @@
     font-family: var(--serif-jp);
     letter-spacing: 0.06em;
   }
-  .bus-table td { color: var(--ink); font-weight: 400; width: 56px; }
+  .bus-table td { color: var(--ink); font-weight: 600; width: 56px; }
   .bus .note { padding-top: 4px; }
   footer .dog {
     width: 96px; height: 96px;
@@ -440,8 +451,8 @@
   .gift-card p { margin: 0; }
   .gift-label {
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     letter-spacing: 0.14em;
     color: var(--gold);
   }
@@ -455,15 +466,16 @@
   }
   .bank-side {
     font-family: var(--serif-jp);
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 16px;
     letter-spacing: 0.16em;
     color: var(--ink-soft);
     padding-top: 6px;
     border-top: 1px solid var(--line);
   }
-  .bank dt { color: var(--mist); font-size: 14px; letter-spacing: 0.08em; padding-top: 2px; }
-  .bank dd { margin: 0; font-weight: 400; letter-spacing: 0.06em; }
-  .gift-note, .gift-body { font-size: 15px; line-height: 1.85; }
+  .bank dt { color: var(--mist); font-size: 15px; letter-spacing: 0.08em; padding-top: 2px; }
+  .bank dd { margin: 0; font-weight: 600; letter-spacing: 0.06em; }
+  .gift-note, .gift-body { font-size: 17px; line-height: 1.85; }
   .gift-note { color: var(--mist); }
 
   /* ---------- timeline ---------- */
@@ -490,8 +502,8 @@
   }
   .timeline time {
     font-family: var(--serif-en);
-    font-weight: 400;
-    font-size: 22px;
+    font-weight: 500;
+    font-size: 26px;
     letter-spacing: 0.06em;
     font-variant-numeric: tabular-nums;
     color: var(--ink);
@@ -513,11 +525,11 @@
   }
   .timeline .what b {
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 20px;
     letter-spacing: 0.1em;
   }
-  .timeline .what span { color: var(--mist); font-size: 15px; }
+  .timeline .what span { color: var(--mist); font-size: 16px; }
 
   /* ---------- notes ---------- */
   .notes {
@@ -536,8 +548,8 @@
   .notes li:first-child { border-top: 1px solid var(--line); }
   .notes li b {
     font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     letter-spacing: 0.12em;
     color: var(--ink);
     padding-top: 2px;
@@ -552,7 +564,8 @@
     justify-items: center;
     color: var(--ink-soft);
     font-family: var(--serif-jp);
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 17px;
     letter-spacing: 0.18em;
   }
   footer .romaji {
@@ -821,7 +834,7 @@
         <p class="gift-body">会場にて、新郎新婦または両家の親族にお渡しください。お声がけいただければご案内します。</p>
       </div>
     </div>
-    <p class="note" style="margin:0;color:var(--mist);font-size:14px">ご無理のない範囲で、お気持ちだけで十分です。</p>
+    <p class="note" style="margin:0;color:var(--mist);font-size:16px">ご無理のない範囲で、お気持ちだけで十分です。</p>
   </section>
 
   <section id="notes">
