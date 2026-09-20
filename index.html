@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Shintaro & Rina 結婚式のご案内</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="竹重慎太郎・鈴木里奈 結婚式のご案内（2026年10月12日 シェラトン・グランデ・トーキョーベイ・ホテル）">
@@ -25,16 +25,16 @@
     --gold: #7D6633;
     --line: #E3DDD0;
     --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
-    --serif-en: "Cormorant Garamond", "Times New Roman", serif;
-    --sans: "Noto Sans JP", "Hiragino Sans", system-ui, sans-serif;
+    --serif-en: var(--serif-jp);
+    --sans: var(--serif-jp);
     color-scheme: light;
   }
   body {
     margin: 0;
     background: var(--ground);
     color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 400;
+    font-family: var(--serif-jp);
+    font-weight: 500;
     font-size: 18px;
     line-height: 1.9;
     letter-spacing: 0.04em;
@@ -55,94 +55,96 @@
     position: relative;
     isolation: isolate;
     color: var(--paper);
-    background: var(--ink) url("img/hero-castle.jpg") center 62% / cover no-repeat;
-    padding-inline: 24px;
-    padding-block: 96px 88px;
+    background: var(--ink) url("img/hero-castle-tall.jpg") center bottom / cover no-repeat;
+    min-height: min(92svh, 860px);
+    padding-inline: 20px;
+    padding-block: 40px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     text-align: center;
+  }
+  @media (min-width: 700px) {
+    .hero {
+      background-image: url("img/hero-castle.jpg");
+      background-position: center 70%;
+      min-height: min(88svh, 820px);
+      padding-block: 48px 0;
+    }
   }
   .hero::before {
     content: "";
     position: absolute; inset: 0; z-index: -1;
-    background:
-      linear-gradient(180deg, rgba(20,34,54,.10) 0%, rgba(20,34,54,0) 40%, rgba(30,43,60,.30) 100%);
+    background: linear-gradient(180deg, rgba(20,34,54,.28) 0%, rgba(20,34,54,.10) 45%, rgba(30,43,60,0) 70%);
   }
   .hero-inner {
-    max-width: 520px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 440px;
     display: grid;
-    gap: 24px;
+    gap: 16px;
     justify-items: center;
-    padding: 44px 28px 40px;
-    background: rgba(24,36,54,.58);
-    -webkit-backdrop-filter: blur(14px) saturate(1.1);
-    backdrop-filter: blur(14px) saturate(1.1);
-    border: 1px solid rgba(217,205,184,.45);
-    box-shadow: 0 24px 60px rgba(20,34,54,.25);
+    padding: 30px 22px 28px;
+    background: rgba(24,36,54,.62);
+    -webkit-backdrop-filter: blur(12px) saturate(1.1);
+    backdrop-filter: blur(12px) saturate(1.1);
+    border: 1px solid rgba(217,205,184,.5);
+    box-shadow: 0 18px 50px rgba(20,34,54,.25);
   }
   .hero .eyebrow {
-    font-family: var(--serif-en);
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 0.32em;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--sand);
     margin: 0;
   }
   .hero .names {
     margin: 0;
-    font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: clamp(34px, 9vw, 46px);
-    letter-spacing: 0.22em;
-    line-height: 1.5;
+    font-weight: 600;
+    font-size: clamp(28px, 7.4vw, 36px);
+    letter-spacing: 0.2em;
+    line-height: 1.45;
     display: grid;
-    gap: 6px;
+    gap: 2px;
     color: #FFFFFF;
-    text-shadow: 0 1px 6px rgba(20,34,54,.55), 0 2px 28px rgba(20,34,54,.5);
   }
   .hero .names .amp {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 0.75em;
+    font-weight: 400;
+    font-size: 0.7em;
     color: var(--sand);
     letter-spacing: 0;
   }
   .hero .romaji {
-    margin: -14px 0 0;
-    font-family: var(--serif-en);
-    font-weight: 300;
-    font-style: italic;
-    font-size: 22px;
-    letter-spacing: 0.12em;
+    margin: -8px 0 0;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.14em;
     color: var(--sand);
   }
   .hero .date {
     margin: 0;
-    font-family: var(--serif-en);
-    font-weight: 300;
-    font-size: 17px;
-    letter-spacing: 0.26em;
-    color: rgba(252,251,248,.85);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.24em;
+    color: rgba(252,251,248,.9);
     display: grid;
-    gap: 4px;
+    gap: 2px;
   }
   .hero .date strong {
-    font-weight: 400;
-    font-size: 34px;
-    letter-spacing: 0.14em;
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.12em;
     color: #FFFFFF;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 1px 6px rgba(20,34,54,.55), 0 2px 28px rgba(20,34,54,.5);
   }
-  .hero .eyebrow, .hero .romaji, .hero .date, .hero .venue-line { text-shadow: 0 1px 8px rgba(20,34,54,.6); }
   .hero .venue-line {
     margin: 0;
-    font-family: var(--serif-jp);
-    font-size: 16px;
-    letter-spacing: 0.16em;
-    color: rgba(252,251,248,.9);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    color: rgba(252,251,248,.92);
   }
+  .hero .wave { width: 90px; }
   .hero .wave { color: var(--sand); }
   .wave {
     display: block;
@@ -192,7 +194,7 @@
   .greet .prose p {
     font-family: var(--serif-jp);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 16.5px;
     line-height: 2.1;
     letter-spacing: 0.08em;
   }
@@ -214,6 +216,9 @@
     column-gap: 24px;
     row-gap: 18px;
   }
+  .info dt { display: flex; align-items: center; gap: 8px; }
+  .info dt .icw { width: 30px; height: 30px; }
+  .info dt .icw .ic { width: 17px; height: 17px; }
   .info dt {
     font-family: var(--serif-jp);
     font-weight: 600;
@@ -277,19 +282,29 @@
   }
   .access > div {
     display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 16px;
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
     align-items: start;
   }
   .access .mode {
-    font-family: var(--serif-jp);
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 0.14em;
-    color: var(--gold);
-    padding-top: 3px;
-    border-right: 1px solid var(--line);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin-bottom: 4px !important;
   }
+  .icw {
+    display: inline-flex;
+    width: 40px; height: 40px;
+    align-items: center; justify-content: center;
+    color: var(--gold);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper);
+    flex: none;
+  }
+  .icw .ic { width: 22px; height: 22px; }
+  .access .icw { margin-top: 2px; }
   .access p { margin: 0; }
   .access .note { color: var(--mist); font-size: 16px; }
 
@@ -458,7 +473,10 @@
     align-content: start;
   }
   .gift-card p { margin: 0; }
+  .gift-label .icw { width: 34px; height: 34px; }
+  .gift-label .icw .ic { width: 19px; height: 19px; }
   .gift-label {
+    display: flex; align-items: center; gap: 10px;
     font-family: var(--serif-jp);
     font-weight: 700;
     font-size: 18px;
@@ -549,12 +567,14 @@
   }
   .notes li {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 16px;
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+    align-items: start;
     padding-block: 16px;
     border-bottom: 1px solid var(--line);
   }
   .notes li:first-child { border-top: 1px solid var(--line); }
+  .notes li > div { display: grid; gap: 2px; }
   .notes li b {
     font-family: var(--serif-jp);
     font-weight: 700;
@@ -579,23 +599,19 @@
   }
   footer .romaji {
     font-family: var(--serif-en);
-    font-style: italic;
-    font-weight: 300;
+        font-weight: 300;
     font-size: 20px;
     letter-spacing: 0.1em;
   }
 
   @media (max-width: 440px) {
     .wrap { padding-inline: 20px; }
-    .hero { padding-block: 64px 56px; padding-inline: 16px; }
-    .hero-inner { padding: 36px 20px 32px; gap: 20px; }
     .info { grid-template-columns: 1fr; row-gap: 6px; }
     .info dt { padding-top: 14px; }
     .info dt:first-child { padding-top: 0; }
     .timeline::before { left: 66px; }
     .timeline li { grid-template-columns: 50px 32px 1fr; }
     .timeline time { font-size: 20px; }
-    .notes li { grid-template-columns: 1fr; gap: 4px; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .hero-inner > * { animation: rise 900ms cubic-bezier(.2,.7,.2,1) both; }
@@ -704,10 +720,17 @@
     </div>
     <div class="access">
       <div>
-        <div class="mode">電車</div>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 21l1.5-3M15 21l-1.5-3M9 17h6"/><circle cx="9" cy="13.5" r="1"/><circle cx="15" cy="13.5" r="1"/></svg></span>
         <div>
-          <p>JR京葉線・武蔵野線「舞浜駅」から、ホテル直通の無料バスが出ています。</p>
-          <p>ディズニー側の改札を出ると、目の前にロータリーがあります。右側のタクシー乗り場の奥、<b>「C」乗り場</b>からご乗車ください。</p>
+          <p class="mode">電車</p>
+          <p>JR京葉線・武蔵野線「舞浜駅」で ディズニーリゾートラインに乗り換え、「ベイサイド・ステーション」下車 徒歩約1分。</p>
+        </div>
+      </div>
+      <div>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="14" rx="2.5"/><path d="M4 10h16M8 18v2M16 18v2M2 8v4M22 8v4"/><circle cx="8.5" cy="14.5" r="1"/><circle cx="15.5" cy="14.5" r="1"/></svg></span>
+        <div>
+          <p class="mode">無料シャトルバス</p>
+          <p>舞浜駅からホテル直通の無料バスも出ています。ディズニー側の改札を出ると目の前にロータリーがあり、右側のタクシー乗り場の奥、<b>「C」乗り場</b>からご乗車ください。</p>
           <div class="bus">
             <p class="bus-title">舞浜駅 C乗り場 発（ホテル行き）</p>
             <table class="bus-table">
@@ -726,13 +749,14 @@
                 <tr><th>18時</th><td>12</td><td>32</td><td>52</td></tr>
               </tbody>
             </table>
-            <p class="note">朝8時から夜21時台まで、舞浜発は毎時00・20・40分、ホテル発は毎時12・32・52分が基本です。交通事情により遅れることがあります。<a href="https://grandcafe.sheratontokyobay.com/resourcefiles/pdf/guestbus.pdf" target="_blank" rel="noopener">全時刻表（ホテル公式PDF）</a></p>
+            <p class="note"><a href="https://grandcafe.sheratontokyobay.com/resourcefiles/pdf/guestbus.pdf" target="_blank" rel="noopener">全時刻表（ホテル公式PDF）</a></p>
           </div>
         </div>
       </div>
       <div>
-        <div class="mode">お車</div>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l1.6-4.2A2 2 0 0 1 7.5 7.5h9a2 2 0 0 1 1.9 1.3L20 13"/><rect x="3" y="13" width="18" height="5" rx="1.5"/><path d="M6 18v1.5M18 18v1.5"/><circle cx="7.5" cy="15.5" r=".9"/><circle cx="16.5" cy="15.5" r=".9"/></svg></span>
         <div>
+          <p class="mode">お車</p>
           <p>ホテル内のお好きな駐車場にお停めください。</p>
           <p>駐車券を<b>本館1階の宴会クローク</b>までお持ちいただくと、5時間の無料券をお渡しします。その後は1時間あたり¥520がかかります。</p>
         </div>
@@ -813,7 +837,7 @@
     </div>
     <div class="gift">
       <div class="gift-card">
-        <p class="gift-label">事前にお振込みいただく場合</p>
+        <p class="gift-label"><span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5 12 4l8.5 5.5H3.5zM5.5 9.5v7M9.8 9.5v7M14.2 9.5v7M18.5 9.5v7M3.5 19.5h17"/></svg></span>事前にお振込みいただく場合</p>
         <p class="gift-body">新郎側・新婦側、ご縁のある方の口座へお振込みください。</p>
         <p class="bank-side">新郎側</p>
         <dl class="bank">
@@ -831,7 +855,7 @@
         </dl>
       </div>
       <div class="gift-card">
-        <p class="gift-label">当日お渡しいただく場合</p>
+        <p class="gift-label"><span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="1.2"/><path d="M12 4v5.5M9 4l3 5.5 3-5.5M8.5 14.5h7M8.5 17h7"/></svg></span>当日お渡しいただく場合</p>
         <p class="gift-body">会場にて、新郎新婦または両家の親族にお渡しください。お声がけいただければご案内します。</p>
       </div>
     </div>
@@ -845,28 +869,46 @@
     </div>
     <ul class="notes">
       <li>
-        <b>お着替え</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4.5a2 2 0 1 1 2 2c-1 .4-2 1-2 2v.7M12 9.2 4.2 15.5A1.6 1.6 0 0 0 5.2 18.5h13.6a1.6 1.6 0 0 0 1-3L12 9.2z"/></svg></span>
+        <div>
+          <b>お着替え</b>
         <p>ホテルでお着替えをされる場合は、本館2階ウエディングサロンに向かって左手奥に更衣室があります。ご自由にご利用ください。</p>
+        </div>
       </li>
       <li>
-        <b>お荷物</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14l-.8 10.2a1.5 1.5 0 0 1-1.5 1.3H7.3a1.5 1.5 0 0 1-1.5-1.3L5 9z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/></svg></span>
+        <div>
+          <b>お荷物</b>
         <p>本館1階の宴会クロークでお預かりします。</p>
+        </div>
       </li>
       <li>
-        <b>貴重品</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.2"/></svg></span>
+        <div>
+          <b>貴重品</b>
         <p>貴重品をお預けになりたい場合は、本館2階フロント右手側に金庫があります。こちらをご利用ください。</p>
+        </div>
       </li>
       <li>
-        <b>お食事</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v7M5 3v4a2 2 0 0 0 4 0V3M7 10v11M16 3c-1.8 0-3 2.5-3 5.5 0 1.8 1 3 2.2 3.4V21M16 3v18"/></svg></span>
+        <div>
+          <b>お食事</b>
         <p>アレルギーや苦手な食材がある方で、まだお知らせいただいていない場合は事前にご連絡ください。可能な範囲で対応いたします。</p>
+        </div>
       </li>
       <li>
-        <b>写真・動画</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.3l1.4-2h5.6l1.4 2h2.3A1.5 1.5 0 0 1 20 8.5v9A1.5 1.5 0 0 1 18.5 19h-13A1.5 1.5 0 0 1 4 17.5v-9z"/><circle cx="12" cy="13" r="3.2"/></svg></span>
+        <div>
+          <b>写真・動画</b>
         <p>ご自由にお撮りください。</p>
+        </div>
       </li>
       <li>
-        <b>お問い合わせ</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.3a9 9 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/></svg></span>
+        <div>
+          <b>お問い合わせ</b>
         <p>ご不明な点は、二人のどちらかへ直接ご連絡ください。</p>
+        </div>
       </li>
     </ul>
   </section>
@@ -877,19 +919,25 @@
       <h2>ご宿泊の方へ</h2>
     </div>
     <dl class="info">
-      <dt>チェックイン</dt>
+      <dt><span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V6.5A1.5 1.5 0 0 1 5.5 5h13A1.5 1.5 0 0 1 20 6.5V20M4 20h16M8 20v-5h8v5M9 9h2M13 9h2M9 12h2M13 12h2"/></svg></span>チェックイン</dt>
       <dd><span class="big">15:00</span><small>チェックイン時にご精算をお願いします</small></dd>
-      <dt>チェックアウト</dt>
+      <dt><span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>チェックアウト</dt>
       <dd><span class="big">12:00</span><small>追加料金がなければ、玄関のチェックアウトBOXにルームキーを入れてください。追加料金がある場合はフロントでお支払いください</small></dd>
     </dl>
     <ul class="notes">
       <li>
-        <b>ご朝食</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5.5a4.5 4.5 0 0 1-4.5 4.5h-2A4.5 4.5 0 0 1 5 14.5V9zM16 10.5h1.5a2.25 2.25 0 0 1 0 4.5H16M8 3.5v2M11 3.5v2M14 3.5v2"/></svg></span>
+        <div>
+          <b>ご朝食</b>
         <p>チェックイン時に朝食券をお渡しします。券に記載されているお好きなレストランへお越しください。営業時間は6:00または6:30から10:00です。</p>
+        </div>
       </li>
       <li>
-        <b>駐車料金</b>
+        <span class="icw"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M9.5 17V7.5h3.2a2.9 2.9 0 0 1 0 5.8H9.5"/></svg></span>
+        <div>
+          <b>駐車料金</b>
         <p>1泊あたり¥3,100です。チェックアウト日の12:00を過ぎると、1時間あたり¥520がかかります。</p>
+        </div>
       </li>
     </ul>
   </section>
